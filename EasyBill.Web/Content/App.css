@@ -1,0 +1,202 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    height: 50px;
+    background-color: cornflowerblue;
+}
+
+.logo {
+    width: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.navbar {
+    max-width: 900px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.navbar ul {
+        border: 3px solid rgb(18, 5, 28);
+        margin-right: 10px;
+        padding: 5px;
+        border-radius: 12px;
+        background-color: rgb(0 0 0);
+ }
+
+.navbar ul li {
+            display: inline;
+            list-style: none;
+ }
+
+            .navbar ul li a {
+                margin-right: 50px;
+                text-decoration: none;
+                font-size: 20px;
+                margin-left: 10px;
+                color: #6495ed;
+            }
+
+.container {
+    position: relative;
+    height: 500px;
+    background-color: black;
+    color: #6495ed;
+    display: flex;
+    align-items: center;
+}
+
+.content {
+    position: absolute;
+    left: 30px;
+}
+
+    .content h3 {
+        padding-top: 3px;
+        padding-bottom: 3px;
+        font-size: 45px;
+    }
+
+    .content h4 {
+        padding-top: 5px;
+        padding-bottom: 15px;
+        font-size: 30px;
+    }
+
+    .content a {
+        margin-top: 10px;
+        text-decoration: none;
+        background-color: #6495ed;
+        color: black;
+        font-size: 27px;
+        border-radius: 6px;
+        padding: 4px;
+    }
+
+
+
+.Logincontent {
+    position: absolute;
+    left: 30px;
+}
+
+    .Logincontent h3 {
+        padding-top: 3px;
+        padding-bottom: 3px;
+        font-size: 45px;
+    }
+
+    .Logincontent h4 {
+        padding-top: 5px;
+        padding-bottom: 15px;
+        font-size: 30px;
+    }
+
+.LoginForm {
+    position: absolute;
+    right: 30px;
+    width: 420px;
+    padding: 3px;
+}
+
+    .LoginForm input,
+    label {
+        font-size: 20px;
+    }
+
+    .LoginForm label {
+        margin-top: 2px;
+        margin-bottom: 2px;
+    }
+
+    .LoginForm input {
+        box-sizing: border-box;
+        width: 100%;
+        margin-top: 2px;
+        margin-bottom: 2px;
+        padding: 6px;
+    }
+
+        .LoginForm input[type=submit] {
+            margin-top: 6px;
+            margin-bottom: 6px;
+            padding: 3px;
+            background-color: #6495ed;
+            color: black;
+            font-size: 25px;
+            border-radius: 5px;
+        }
+
+.Singup_content {
+    position: absolute;
+    left: 30px;
+}
+
+    .Singup_content h3 {
+        padding-top: 3px;
+        padding-bottom: 3px;
+        font-size: 45px;
+    }
+
+    .Singup_content h4 {
+        padding-top: 5px;
+        padding-bottom: 15px;
+        font-size: 30px;
+    }
+
+    .Singup_content a {
+        margin-top: 10px;
+        text-decoration: none;
+        background-color: #6495ed;
+        color: black;
+        font-size: 27px;
+        border-radius: 6px;
+        padding: 4px;
+    }
+
+
+  .Singup_form {
+    max-width: 420px;
+    padding: 3px;
+    margin: auto;
+}
+
+    .Singup_form input,
+    label {
+        font-size: 20px;
+    }
+
+    .Singup_form label {
+        margin-top: 2px;
+        margin-bottom: 2px;
+    }
+
+    .Singup_form input {
+        box-sizing: border-box;
+        width: 100%;
+        margin-top: 2px;
+        margin-bottom: 2px;
+        padding: 6px;
+    }
+
+        .Singup_form input[type=submit] {
+            margin-top: 6px;
+            margin-bottom: 6px;
+            padding: 3px;
+            background-color: #6495ed;
+            color: black;
+            font-size: 25px;
+            border-radius: 5px;
+        }
+
+.Singup_Inner {
+    margin: 10px;
+}

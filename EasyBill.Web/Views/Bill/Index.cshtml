@@ -1,0 +1,25 @@
+﻿<div class="con">
+    <div class="menulogo">
+        <img onclick="menu()" src="~/Images/png-clipart-computer-icons-menu-bar-icon-design-hamburger-button-others-miscellaneous-angle.png" alt="">
+    </div>
+    <div class="menu" id="menu" style="display:block;">
+        <ul>
+            <li><a href="">ShopName</a></li>
+            <li>Address</li>
+            <li>PhoneNumber</li>
+            <li>ChangePassword</li>
+            <li>@Html.ActionLink("Logout", "Logout", "Home")</li>
+        </ul>
+    </div>
+    <div class="outer">
+        <h1 style="text-align: center;">Your Shop</h1>
+        <div class="shopmenu">
+            <div>@Html.ActionLink("Create Bill", "Create", "Invoice")</div>
+            <div>Analyis Bill</div>
+        </div>
+        <div class="shopmenu">
+            <div>@Html.ActionLink("Data", "Get", "Invoice")</div>
+            <div>Todo List</div>
+        </div>
+    </div>
+</div>

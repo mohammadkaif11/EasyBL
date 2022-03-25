@@ -15,7 +15,6 @@ namespace EasyBill.Data.Context
         {
             Database.SetInitializer<EasyBillContext>(new CreateDatabaseIfNotExists<EasyBillContext>());
         }
-
         public DbSet<User> user { get; set; }
         public DbSet<Bills> bills { get; set; }
         public DbSet<Items> items { get; set; }

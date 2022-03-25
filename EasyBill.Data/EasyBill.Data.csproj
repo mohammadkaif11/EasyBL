@@ -52,18 +52,19 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Context\EasyBillContext.cs" />
+    <Compile Include="IReposistory\IBillsReposistory.cs" />
+    <Compile Include="IReposistory\IItemsReposistory.cs" />
+    <Compile Include="IReposistory\IUserReposistory.cs" />
     <Compile Include="Model\Bills.cs" />
     <Compile Include="Model\Items.cs" />
     <Compile Include="Model\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reposistory\UserReposistory.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="IReposistory\" />
-    <Folder Include="Reposistory\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

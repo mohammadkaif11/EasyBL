@@ -11,10 +11,10 @@ namespace EasyBill.Data.Model
         public string UserPassword { get; set; }
         public string UserEmail { get; set; }
         public string UserShopName { get; set; }
-        public string UserShoAddress { get; set; }
+        public string UserShopAddress { get; set; }
         public string UserPhoneNumber { get; set; }
-        public DateTime UserJoinData { get; set; }
-        public int BillSno { get; set; }  
+        public DateTime UserJoinDate { get; set; }
+        public int UserBillSno { get; set; }  
 
     }
 
