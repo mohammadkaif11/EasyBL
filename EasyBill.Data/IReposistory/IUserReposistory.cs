@@ -11,5 +11,7 @@ namespace EasyBill.Data.IReposistory
     {
         int Add(User obj);
         User Get(string email, string password);
+        int UpdateBillSno(int id);
+        User FindById(int id);
     }
 }
