@@ -15,6 +15,7 @@ namespace EasyBill.Web
             // it is NOT necessary to register your controllers
             
             container.RegisterType<IUserService, UserService>();
+            container.RegisterType<IBillService, BillService>();
             DependencyResolver.SetResolver(new UnityDependencyResolver(container));
         }
     }
