@@ -44,6 +44,9 @@ namespace EasyBill.Web.Controllers
                 {
                     FormsAuthentication.SetAuthCookie(UserEmail, false);
                     Session["user"] = user;
+                    Session["shopName"] = user.UserShopName.ToString();
+                    Session["address"] = user.UserShopAddress.ToString();
+                    Session["phoneNumber"] = user.UserPhoneNumber.ToString();
                    return  RedirectToAction("Index", "Bill");
                 }
             }
@@ -79,7 +82,7 @@ namespace EasyBill.Web.Controllers
             
         }
 
-         [Authorize]
+        [Authorize]
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";

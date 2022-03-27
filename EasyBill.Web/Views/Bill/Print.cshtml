@@ -3,8 +3,12 @@
 @{
     Layout = "~/Views/Shared/_InnerLayout.cshtml";
     var i = 1;
+
 } <div>
     <div class="outercontainer">
+         <h1 style="text-align: center;">@Session["shopName"]</h1>
+        <h2 style="text-align: center;">@Session["address"]</h2>
+        <h3 style="text-align: center;">@Session["phoneNumber"]</h3>
         <div class="innercontainer">
             <div class="container">
                 <h3>Name:@Model.CustomerName</h3>
