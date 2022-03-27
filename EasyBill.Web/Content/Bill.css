@@ -1,0 +1,62 @@
+﻿
+.menulogo img {
+    height: 50px;
+    margin-left: 0px;
+    margin-top: 2px;
+    background-color: #6495ed;
+}
+
+.menu {
+    background-color: black;
+    width: 220px;
+    margin-left: 4px;
+}
+
+    .menu ul li {
+        list-style: none;
+        margin-bottom: 20px;
+        padding: 10px;
+        text-align: center;
+        color: #6495ed;
+        font-size: 18px;
+    }
+
+        .menu ul li a {
+            text-decoration: none;
+            color: #6495ed;
+            font-size: 18px;
+        }
+
+.shopmenu {
+    display: flex;
+    margin: 4px;
+}
+
+    .shopmenu div {
+        width: 150px;
+        height: 100px;
+        margin: 10px;
+        text-align: center;
+        padding: 15px;
+        background-color: black;
+        font-size: 24px;
+        color: #6495ed;
+    }
+
+        .shopmenu div a {
+            color: #6495ed;
+            text-decoration: none;
+        }
+
+.Bill_container {
+    position: relative;
+}
+
+.Bill_outer {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-right: 40px;
+    margin-top: 40px;
+    background-color: #6495ed;
+}

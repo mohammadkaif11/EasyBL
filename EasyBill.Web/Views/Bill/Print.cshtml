@@ -1,0 +1,52 @@
+﻿@using EasyBill.Buisness.Model
+@model Invoice
+@{
+    Layout = "~/Views/Shared/_InnerLayout.cshtml";
+    var i = 1;
+} <div>
+    <div class="outercontainer">
+        <div class="innercontainer">
+            <div class="container">
+                <h3>Name:@Model.CustomerName</h3>
+                <p>BillNo:@Model.Id</p>
+                <p>Phone:@Model.CustomerPhone</p>
+                <p>ReciptDate:@Model.RecivedDate</p>
+                <p>DeliveryDate:@Model.DeliveryDate</p>
+            </div>
+            <table class="table container">
+                <tr>
+                    <th scope="col">Sno</th>
+                    <th>ItemName</th>
+                    <th>ItemPrice</th>
+                    <th>ItemQuantity</th>
+                </tr>
+                @foreach (var item in Model.Billitem)
+                {
+                    <tr>
+                        <td scope="row">@i</td>
+                        <td>@item.ItemName</td>
+                        <td>@item.ItemPrice</td>
+                        <td>@item.ItemQuantity</td>
+                    </tr>
+                    i++;
+                }
+            </table>
+            <div class="d-flex justify-content-end">
+                <div class="mx-5">
+                    <h6>TotalQuantity:@Model.ToltalItem</h6>
+                    <h6>TotalPrice:@Model.ToltalPrice</h6>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    <div class="d-flex justify-content-around my-5">
+        <button type="button" class="btn btn-dark">Back</button>
+        <button type="button" class="btn btn-dark">Send</button>
+        <button type="button" class="btn btn-dark">Print</button>
+    </div>
+
+
+
+
+

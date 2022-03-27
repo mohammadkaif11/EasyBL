@@ -1,0 +1,63 @@
+﻿@{
+    Layout = "~/Views/Shared/_InnerLayout.cshtml";
+}
+<div class="container-fluid my-2">
+    <div>
+        @using (Html.BeginForm())
+        {
+            <hr />
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <h5 style="text-align:center" class="my-2">Bill Chart</h5>
+            <hr />
+            <div class="container">
+                <form>
+                    <table class="table" id="ForDynamic">
+                        <tr>
+                            <th scope="col">Name</th>
+                            <th scope="col">PhoneNumber</th>
+                            <th scope="col">DeliveryDate</th>
+                        </tr>
+                        <tr>
+                            <td><input type="text" id="CustomerName" name="CustomerName" /></td>
+                            <td><input type="text" id="CustomerPhoneNumber" name="CustomerPhoneNumber" /></td>
+                            <td><input type="datetime-local" name="DeliveryDate" id="DeliveryDate" /></td>
+                        </tr>
+                        <tr>
+                            <th>Itemn Name</th>
+                            <th>Itemn Qunatity</th>
+                            <th>Item Price</th>
+                        </tr>
+                        <tr class="my-2">
+                            <td scope="row"> @Html.TextBox("[" + 0 + "].ItemName") </td>
+                            <td scope="row"> @Html.TextBox("[" + 0 + "].ItemQuantity")</td>
+                            <td scope="row"> @Html.TextBox("[" + 0 + "].ItemPrice")</td>
+                        </tr>
+                    </table>
+                    <input type="submit" value="Submit" class="btn btn-light my-2 p-2 container">
+                </form>
+            </div>
+        }
+        <div class="d-flex justify-content-around my-5">
+            <button type="button" class="btn btn-dark" onclick="Back()">Back</button>
+            <button type="button" class="btn btn-dark" onclick="Remove()">Remove Slot</button>
+            <button type="button" onclick="Add()" class="btn btn-dark">Add Slot</button>
+        </div>
+    </div>
+</div>
+<script>
+    function Back() {
+        window.location.href="/Bill"
+    }
+
+    function Remove() {
+        var ForDynamic = document.getElementById("ForDynamic");
+        var ForDynamic_Child = document.getElementById("ForDynamic").children;
+        if (i > 1) {
+            ForDynamic.removeChild(ForDynamic_Child[i-1])
+            i--;
+            console.log(i)
+        } else {
+            alert("Cannot Remove Child of One")
+        }
+    } 
+</script>
