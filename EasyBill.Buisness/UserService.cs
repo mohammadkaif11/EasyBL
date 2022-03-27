@@ -20,7 +20,6 @@ namespace EasyBill.Buisness
           public UserService(IUserReposistory userReposistory)
         {
             this._UserReposistory = userReposistory;
-
         }
 
 
