@@ -59,6 +59,8 @@
     <Compile Include="Model\Items.cs" />
     <Compile Include="Model\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reposistory\BillsReposistory.cs" />
+    <Compile Include="Reposistory\ItemsReposistory.cs" />
     <Compile Include="Reposistory\UserReposistory.cs" />
   </ItemGroup>
   <ItemGroup>

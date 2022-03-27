@@ -46,6 +46,26 @@ namespace EasyBill.Data.Reposistory
             }
         }
 
+        public User FindById(int id)
+        {
+
+            User user = new User();
+            try
+            {
+                user = table.Where(x => x.ID==id).FirstOrDefault();
+                if (user != null)
+                {
+                    return user;
+                }
+                return null;
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex.Message);
+                return user;
+            }
+        }
+
         public User Get(string email, string password)
         {
             User user = new User();
@@ -66,6 +86,25 @@ namespace EasyBill.Data.Reposistory
 
         }
 
-    
+        //GetUsername By its id
+        public int UpdateBillSno(int id)
+        {
+            try
+            {
+                User user = table.Find(id);
+                int Billsno = user.UserBillSno;
+                user.UserBillSno=Billsno+1;
+                table.Attach(user);
+                context.Entry(user).State = EntityState.Modified;
+                int a = context.SaveChanges();
+                return a;
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex.Message);
+                return -1;
+            }
+
+        }
     }
 }
