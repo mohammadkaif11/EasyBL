@@ -25,10 +25,14 @@ namespace EasyBill.Web
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/site.css"));
+            bundles.Add(new StyleBundle("~/Content/Chart").Include("~/Content/Chart.css", "~/Content/Chart.min.css"));
 
             bundles.Add(new StyleBundle("~/Content/App").Include("~/Content/App.css").Include("~/Content/Bill.css"));
             bundles.Add(new ScriptBundle("~/Scripts/App").Include("~/Scripts/App.js").Include("~/Scripts/CreateBill.js"));
             bundles.Add(new ScriptBundle("~/Scripts/Bill").Include("~/Scripts/CreateBill.js"));
+            bundles.Add(new ScriptBundle("~/Scripts/Chart").Include("~/Scripts/Chart.js").Include("~/Scripts/Chart.min.js"));
+
+
 
         }
     }

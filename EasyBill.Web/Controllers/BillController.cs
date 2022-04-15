@@ -19,16 +19,29 @@ namespace EasyBill.Web.Controllers
             _BillService = billService; 
         }
 
-
+ 
         // GET: Bill    
         public ActionResult Index()
         {
-            return View();
+
+            User user = (User)Session["user"];
+            if (user != null)
+            {
+                return View();
+            }
+            return RedirectToAction("Login", "Home");
         }
-            [HttpGet]
+
+        [HttpGet]
         public ActionResult Create()
         {
-            return View();
+
+            User user = (User)Session["user"];
+            if (user != null)
+            {
+                return View();
+            }
+            return RedirectToAction("Login", "Home");
         }
 
 
@@ -37,20 +50,55 @@ namespace EasyBill.Web.Controllers
         {
             
             User user =(User)Session["user"];
-            Invoice invoice = _BillService.Insert(user.ID,obj,obj2);
-            if (invoice != null)
+            if (user != null)
             {
-                return View("Print",invoice);
+                Invoice invoice = _BillService.Insert(user.ID, obj, obj2);
+                if (invoice != null)
+                {
+                    return View("Print", invoice);
 
+                }
+                ModelState.AddModelError("", "Please Fill The Chart");
+                return View();
             }
-            ModelState.AddModelError("", "Please Fill The Chart");
-            return View();
+            return RedirectToAction("Login", "Home");
         }
 
         [HttpGet]
         public ActionResult Print()
         {
+
+            User user = (User)Session["user"];
+            if (user != null)
+            {
+                return View();
+
+            }
+            return RedirectToAction("Login", "Home");
+
+        }
+
+
+        public ActionResult Get()
+        {
+            User user = (User)Session["user"];
+            if (user!=null){
+                var data = _BillService.Get(user.ID);
+                return View(data);
+            }
+            return RedirectToAction("Login", "Home");
+        }
+
+        public ActionResult Analaysis()
+        {
             return View();
         }
+
+        public ActionResult Dashboard()
+        {
+            return View();
+
+        }
+
     }
 }

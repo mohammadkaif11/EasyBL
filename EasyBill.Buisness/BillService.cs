@@ -39,7 +39,7 @@ namespace EasyBill.Buisness
 
 
 
-        //Insert of Bill
+        //Insert in Bill
         public Invoice Insert(int id, Bills obj, IEnumerable<Items> dept)
         {
             //Create two Variable for Verification of database operation
@@ -70,7 +70,8 @@ namespace EasyBill.Buisness
                         billItems.Add(new BillItem() { ItemName=Item.ItemName,ItemQuantity=Item.ItemQuantity,ItemPrice=Item.ItemPrice});
                         Item.BLID = BillSno;
                         Item.UserID = id;
-                        
+                        Item.RecivedDate = DateTime.Now;    
+                        Item.DeliveryDate=obj.DeliveryDate;
                         int n = _ItemsReposistory.AddItems(Item);
                         if (n > 0)
                         {
@@ -117,6 +118,54 @@ namespace EasyBill.Buisness
 
                 return null;
            
+        }
+       
+
+        //Get All Bill
+        public ICollection<Invoice> Get(int id)
+        {
+            List<Invoice> invoices= new List<Invoice>();    
+
+            //Get  ALLBill Data By UserId
+            List<Bills> _Bills = _BillReposistory.GetBills(id);
+
+            //Get AllItems Crossponding by Bill Data By UserId
+            List<Items> _items = _ItemsReposistory.GetItems(id);
+
+            //Temporary list
+            List<Items> Temp_ = new List<Items>();
+            
+            foreach (var item in _Bills)
+            {
+                List<BillItem> billItem = new List<BillItem>(); 
+                Invoice invoice = new Invoice();
+                invoice.Id = item.ID;
+                invoice.BillSno = item.BLID;
+                invoice.CustomerName = item.CustomerName;
+                invoice.CustomerPhone = item.CustomerPhoneNumber;
+                invoice.RecivedDate = item.RecivedDate;
+                invoice.DeliveryDate = item.DeliveryDate;
+                invoice.ToltalItem = item.TotalItem;
+                invoice.ToltalPrice = item.TotalAmount;
+                foreach (var item2 in _items)
+                {
+                    if (item.BLID == item2.BLID)
+                    {
+                        billItem.Add(new BillItem() { Id=item2.ID,ItemName = item2.ItemName, ItemPrice = item2.ItemPrice, ItemQuantity = item2.ItemQuantity });
+                        Temp_.Add(item2);
+                    }
+                    else
+                    {
+                        continue;
+                    }
+
+                    invoice.Billitem = billItem;
+                }
+                invoices.Add(invoice);
+                //updateItems
+                _items = _items.Except(Temp_).ToList();
+            }
+            return invoices;
         }
     }
 

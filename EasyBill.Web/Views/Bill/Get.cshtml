@@ -1,0 +1,49 @@
+﻿@model IEnumerable<EasyBill.Buisness.Model.Invoice>
+@{
+    Layout = "~/Views/Shared/_InnerLayout.cshtml";
+    ViewBag.Title = "Get";
+}   
+
+
+<div class="container">
+    @foreach (var item in Model)
+    {
+        var forId = item.CustomerName.Substring(0, 5) + item.BillSno;
+        <button class="btn btn-primary mx-3 my-3" type="button" data-bs-toggle="collapse" data-bs-target=#@forId aria-expanded="true" aria-controls="collapseExample">
+            @item.CustomerName (@item.BillSno)
+        </button>
+        <div class="collapse mx-2" id=@forId>
+            <div class="card border-dark mb-3" style="max-width: 18rem;">
+                <div class="card-header">
+                    @item.BillSno
+                </div>
+                <div class="card-header">
+                    @item.CustomerName
+                   (@item.CustomerPhone)
+                </div>
+                <div class="card-body text-dark">
+                    @if (item.Billitem != null)
+                    {
+                        <p class="card-text">Name X Quantity X Price</p>
+                        foreach (var items in item.Billitem)
+                        {
+                            <p class="card-text">@items.ItemName X @items.ItemQuantity X @items.ItemPrice</p>
+
+                        }
+                    }
+                    <div class="card-footer bg-transparent border-success">
+                        <span class=""> @item.DeliveryDate</span>
+                        <span class=""> @item.RecivedDate</span>
+                    </div>
+                    <div class="card-footer bg-transparent border-success">
+                        <span class="">TotalPrice-@item.ToltalPrice</span>
+                        <span class="">TotalQuantity-@item.ToltalItem</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    }
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+

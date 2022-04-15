@@ -29,6 +29,7 @@ namespace EasyBill.Data.Reposistory
             table = context.Set<Bills>();
         }
      
+    
         public int AddBills(Bills obj)
         {
             try
@@ -45,6 +46,40 @@ namespace EasyBill.Data.Reposistory
             }
         }
 
-   
+        public List<Bills> GetBills(int id)
+        {
+            return table.Where(x => x.UserID == id).ToList();
+        }
+
+        public List<Bills> GetBillsByDate(int id, DateTime date)
+        {
+            try
+            {
+                return table.Where(x => x.UserID == id && x.RecivedDate.Date.Equals(date)).ToList();
+
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex.Message);
+
+                return null;
+            }
+        }
+       
+
+        //Month
+        public List<Bills> GetBillsByMonth(int id, int mon)
+        {
+            try
+            {
+                return table.Where(x => x.UserID == id && x.RecivedDate.Date.Month.Equals(mon)).ToList();
+
+            }catch (Exception ex)
+            {
+                Debug.WriteLine(ex.Message);
+
+                return null;    
+            }
+        }
     }
 }

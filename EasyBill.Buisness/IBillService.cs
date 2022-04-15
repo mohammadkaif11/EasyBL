@@ -11,6 +11,7 @@ namespace EasyBill.Buisness
     public interface IBillService
     {
         Invoice Insert(int id, Bills obj, IEnumerable<Items> dept);
+        ICollection<Invoice> Get(int id);
        
     }
 }

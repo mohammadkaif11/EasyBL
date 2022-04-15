@@ -12,5 +12,7 @@ namespace EasyBill.Data.Model
         public string ItemName { get; set; }
         public decimal ItemPrice { get; set; }
         public int ItemQuantity { get; set; }
+        public DateTime RecivedDate { get; set; }
+        public DateTime DeliveryDate { get; set; }
     }
 }

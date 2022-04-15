@@ -1,13 +1,13 @@
-﻿using System;
+﻿using EasyBill.Data.Model;
+using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.ComponentModel.DataAnnotations;
 
 namespace EasyBill.Buisness.Model
 {
     public class Invoice
     {
+        [Key]
         public int Id { get; set; } 
         public int BillSno { get; set; }
         public string CustomerName { get; set; }
@@ -17,9 +17,11 @@ namespace EasyBill.Buisness.Model
         public int ToltalItem { get; set; }
         public DateTime DeliveryDate { get; set; }
         public DateTime RecivedDate { get; set; }
-
     }
+
     public class BillItem {
+        [Key]
+        public int Id { get; set; }
         public string ItemName { get; set; }
         public int ItemQuantity { get; set; }
         public decimal ItemPrice { get; set; }

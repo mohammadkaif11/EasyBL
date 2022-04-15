@@ -11,5 +11,15 @@ namespace EasyBill.Data.IReposistory
     {
         int AddItems(Items obj);
 
+        List<Items> GetItems(int id);
+
+        //Get By Month
+        List<Items> GetItemsByMonth(int id ,int Month);
+
+        //get by particular date
+        List<Items> GetItemsByDate(int id,DateTime date);
+
+
+
     }
 }

@@ -10,5 +10,17 @@ namespace EasyBill.Data.IReposistory
     public interface IBillsReposistory
     {
         int AddBills(Bills obj);
+
+        //Get allBill 
+        List<Bills> GetBills(int id);
+
+        //Get Data By Month 
+        List<Bills> GetBillsByMonth(int id,int Month);
+
+        //Get Data By Particular Date
+        List<Bills> GetBillsByDate(int id,DateTime date);
+
+
+
     }
 }
